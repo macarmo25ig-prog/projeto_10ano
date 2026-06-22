@@ -1,0 +1,184 @@
+[
+    {
+        "Perguntas": "Quem foi o rei do pop?",
+        "Respostas": ["Elvis Presley", "Justin Bieber", "Anitta", "Michael Jackson"],
+        "Certa": 3,
+        "Dificuldade": "facil"
+    },
+    {
+        "Perguntas": "Qual é o metal cujo símbolo químico é AU?",
+        "Respostas": ["Prata", "Cobre", "Ouro", "Ferro"],
+        "Certa": 2,
+        "Dificuldade": "facil"
+    },
+    {
+        "Perguntas": "Qual é a capital de Portugal?",
+        "Respostas": ["Porto", "Lisboa", "Coimbra", "Faro"],
+        "Certa": 1,
+        "Dificuldade": "facil"
+    },
+    {
+        "Perguntas": "Quantos continentes existem?",
+        "Respostas": ["5", "6", "7", "8"],
+        "Certa": 2,
+        "Dificuldade": "facil"
+    },
+    {
+        "Perguntas": "Qual é o maior planeta do sistema solar?",
+        "Respostas": ["Terra", "Marte", "Júpiter", "Saturno"],
+        "Certa": 2,
+        "Dificuldade": "facil"
+    },
+    {
+        "Perguntas": "Qual é o elemento químico com símbolo O?",
+        "Respostas": ["Ouro", "Oxigénio", "Ósmio", "Hidrogénio"],
+        "Certa": 1,
+        "Dificuldade": "facil"
+    },
+    {
+        "Perguntas": "Qual é o planeta mais próximo do Sol?",
+        "Respostas": ["Vénus", "Mercúrio", "Terra", "Marte"],
+        "Certa": 1,
+        "Dificuldade": "facil"
+    },
+    {
+        "Perguntas": "Qual é o maior oceano do mundo?",
+        "Respostas": ["Atlântico", "Índico", "Ártico", "Pacífico"],
+        "Certa": 3,
+        "Dificuldade": "facil"
+    },
+    {
+        "Perguntas": "Qual é a fórmula da água?",
+        "Respostas": ["CO2", "H2O", "O2", "NaCl"],
+        "Certa": 1,
+        "Dificuldade": "facil"
+    },
+    {
+        "Perguntas": "Quanto é 7 x 8?",
+        "Respostas": ["54", "56", "64", "48"],
+        "Certa": 1,
+        "Dificuldade": "facil"
+    },
+
+    {
+        "Perguntas": "Quem pintou a Mona Lisa?",
+        "Respostas": ["Van Gogh", "Picasso", "Da Vinci", "Michelangelo"],
+        "Certa": 2,
+        "Dificuldade": "medio"
+    },
+    {
+        "Perguntas": "Qual é o rio mais longo do mundo?",
+        "Respostas": ["Amazonas", "Nilo", "Danúbio", "Mississippi"],
+        "Certa": 0,
+        "Dificuldade": "medio"
+    },
+    {
+        "Perguntas": "Em que ano terminou a Segunda Guerra Mundial?",
+        "Respostas": ["1940", "1942", "1945", "1950"],
+        "Certa": 2,
+        "Dificuldade": "medio"
+    },
+    {
+        "Perguntas": "Qual é o país com maior população?",
+        "Respostas": ["Índia", "China", "EUA", "Brasil"],
+        "Certa": 0,
+        "Dificuldade": "medio"
+    },
+    {
+        "Perguntas": "Qual é a moeda do Japão?",
+        "Respostas": ["Won", "Yuan", "Iene", "Dólar"],
+        "Certa": 2,
+        "Dificuldade": "medio"
+    },
+    {
+        "Perguntas": "Quem escreveu 'Os Lusíadas'?",
+        "Respostas": ["Fernando Pessoa", "Eça de Queirós", "Camões", "Saramago"],
+        "Certa": 2,
+        "Dificuldade": "medio"
+    },
+    {
+        "Perguntas": "Quantos ossos tem o corpo humano adulto?",
+        "Respostas": ["206", "201", "210", "198"],
+        "Certa": 0,
+        "Dificuldade": "medio"
+    },
+    {
+        "Perguntas": "Quem descobriu a gravidade?",
+        "Respostas": ["Einstein", "Newton", "Galileu", "Tesla"],
+        "Certa": 1,
+        "Dificuldade": "medio"
+    },
+    {
+        "Perguntas": "Qual é a língua mais falada no mundo?",
+        "Respostas": ["Inglês", "Espanhol", "Mandarim", "Hindi"],
+        "Certa": 2,
+        "Dificuldade": "medio"
+    },
+    {
+        "Perguntas": "Quem foi o primeiro homem na Lua?",
+        "Respostas": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "Elon Musk"],
+        "Certa": 1,
+        "Dificuldade": "medio"
+    },
+
+    {
+        "Perguntas": "Qual é a capital da Austrália?",
+        "Respostas": ["Sydney", "Melbourne", "Canberra", "Perth"],
+        "Certa": 2,
+        "Dificuldade": "dificil"
+    },
+    {
+        "Perguntas": "Quem pintou o teto da Capela Sistina?",
+        "Respostas": ["Da Vinci", "Michelangelo", "Raphael", "Donatello"],
+        "Certa": 1,
+        "Dificuldade": "dificil"
+    },
+    {
+        "Perguntas": "Qual é o valor aproximado de π?",
+        "Respostas": ["2.14", "3.14", "4.13", "3.41"],
+        "Certa": 1,
+        "Dificuldade": "dificil"
+    },
+    {
+        "Perguntas": "Quem escreveu '1984'?",
+        "Respostas": ["George Orwell", "Aldous Huxley", "Kafka", "Hemingway"],
+        "Certa": 0,
+        "Dificuldade": "dificil"
+    },
+    {
+        "Perguntas": "Qual é a velocidade da luz no vácuo?",
+        "Respostas": ["300 mil km/s", "150 mil km/s", "1 milhão km/s", "30 mil km/s"],
+        "Certa": 0,
+        "Dificuldade": "dificil"
+    },
+    {
+        "Perguntas": "Qual é o elemento químico mais abundante no universo?",
+        "Respostas": ["Oxigénio", "Hidrogénio", "Carbono", "Hélio"],
+        "Certa": 1,
+        "Dificuldade": "dificil"
+    },
+    {
+        "Perguntas": "Qual é o maior deserto do mundo (incluindo gelo)?",
+        "Respostas": ["Saara", "Antártida", "Gobi", "Atacama"],
+        "Certa": 1,
+        "Dificuldade": "dificil"
+    },
+    {
+        "Perguntas": "Em que ano caiu o Muro de Berlim?",
+        "Respostas": ["1987", "1989", "1991", "1993"],
+        "Certa": 1,
+        "Dificuldade": "dificil"
+    },
+    {
+        "Perguntas": "Qual é o nome da galáxia onde vivemos?",
+        "Respostas": ["Andrómeda", "Via Láctea", "Sombrero", "Órion"],
+        "Certa": 1,
+        "Dificuldade": "dificil"
+    },
+    {
+        "Perguntas": "Qual é o número primo seguinte a 97?",
+        "Respostas": ["99", "100", "101", "103"],
+        "Certa": 2,
+        "Dificuldade": "dificil"
+    }
+]
