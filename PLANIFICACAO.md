@@ -12,14 +12,12 @@ perguntas = [
         "Perguntas" : "Quem foi o rei do pop ?",
         "Respostas" : ["Elvis Presley", "Justin Bieber", "Anitta", "Michael Jackson"],
         "Certa" : 3
-        "Categoria" : "Musica"
         "Dificuldade" : "facil"
     },
     {
         "Perguntas" : "Qual é o metal cujo símbolo químico é AU ?"
         "Respostas" : ["Prata", "cobre", "ouro", "ferro"],
         "Certa" : 2
-        "Categoria" : "Ciencias"
         "Dificuldade" : "dificil"
 
     }
