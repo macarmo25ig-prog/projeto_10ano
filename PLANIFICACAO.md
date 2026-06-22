@@ -69,6 +69,7 @@ perguntas = [
 6. No menu tambem tem a opção de ver o Top 10 melhores jogadores que jogaram, esconlhendo essa opção você consegue ver o seu local na tabela com as suas informações.
 
 ## 5) Ecrãs do programa
+
 | Ecrã | O que mostrar / pedir ao utilizador      |
 | ------- | ---------------- |
 | Menu_nome  | Ira pedir ao utilizador que coloque seu nome de jogador |
@@ -78,4 +79,18 @@ perguntas = [
 | Menu_final  | Tela final depois que o jogo acabar que aparecera as informações da partida |
 | Menu_regras| sera a tela onde ficara as informações do jogo |
 
-## 6)
+## 6)Plano de testes
+
+- **Entrada inválida**: o utilizador digita algo que não existe no menu. O programa deteta o erro, mostra uma mensagem de aviso e volta a pedir uma escolha sem fechar.
+
+- **Verificação de perguntas**: vai verificar se existe as perguntas no ficheiro **JSON** de perguntas para que o programa não feche.
+
+- **Verficação de historico**: vai verificar se existe o ficheiro historico **JSON** que ira salvas os dados das ultimas pessoas que jogaram.
+
+- **verificação de nome**: vai verificar se o usuario colocou o nome para poder salvar no ficheiro historico.
+
+- **Verificação de respostas**: vai verificar o que o jogador escolheu como respota se foi a correta ou errada.
+
+- **verificação de ficheiros**: vai verificar se exite os ficheiros pedidos para funcionar.
+
+- **verificação de dificuldade**: vai verificar a dificuldade escolhida pelo o jogador para aparecer perguntas de varias dificuldades.
