@@ -1,4 +1,6 @@
 import json
+import random 
+
 
 def mostrar_menu():
     while True:
@@ -7,7 +9,7 @@ def mostrar_menu():
         print("2 - Regras")
         print("3 - Classificações")
         print("0 - Sair")
-        op = int(input("Introduz a tua opção: "))
+        op = float(input("Introduz a tua opção: "))
 
         if op == 0:
             break
@@ -29,28 +31,37 @@ def mostrar_pergunta(pergunta):
     for resposta in pergunta["Respostas"]:
         print(f"{i} - {resposta}")
         i = i + 1
-    print(f"-- Dificuldade: {pergunta['Dificuldade']}\n --")
+    print(f"-- Dificuldade: {pergunta['Dificuldade']}\n")
     op = int(input("Qual a resposta correta? ")) 
     return op
 
 
 def verifica_resposta(pergunta, resposta):
     if resposta == pergunta["Certa"]:
-        print(f"parabens")
+        return True
     else:
-        print(f"errouu feio")
+        return False
 
 def main():
     op = mostrar_menu()
-
     if op == 1:
         print("Aqui vai ficar a função de jogar")
     elif op == 2:
         print("Aqui vão ficar as regras")
     elif op == 3:
         print("Aqui vai ficar a classificação")
+    elif op == 1.5:
+        print(1)
 
-
-# main()
+main()
 p = carregar_perguntas()
-mostrar_pergunta(p[0])
+
+perguntas_selecionadas = random.sample(p, 15)
+
+for pergunta in perguntas_selecionadas:
+    op = mostrar_pergunta(pergunta)
+    validacao = verifica_resposta(pergunta, op)
+    if validacao:
+        print(":O VOCÊ É UMA MAQUINAA!")
+    else:
+        print(":( Errouuuu")
