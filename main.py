@@ -53,20 +53,51 @@ def regras():
     print("\n3. toda vez que iniciar sua pontuação vai ser salva para vc poder ver dps no menu de classificação\n")
     input("Para sair aperte ENTER...")
 
+def menu_final(pontos, p_perguntas, r_perguntas):
+
+    print("---------------*  Fim de Jogo  *-----------------")
+    print(f"\nvc acertou {p_perguntas} perguntas, Parabens!! :) \n")
+    print(f"vc erro {r_perguntas} perguntas, melhor na proxima amigo :( ")
+    print(f"\nvc teve {pontos} pontos, Parabens!! ;) \n")
+    print(f"0 - Retornar")
+    print(f"1 - Jogar Novamente")
+    respota = int(input("Introduza a sua escolha: "))
+    if respota == 0:
+        mostrar_menu()
+    elif respota == 1:
+        main()
+
 def main():
+    pontos = 0
+    p_perguntas = 0
+    r_perguntas = 0
     op = mostrar_menu()
     if op == 1:
         p = carregar_perguntas()
 
-        perguntas_selecionadas = random.sample(p, 15)
+        perguntas_selecionadas = random.sample(p, 10)
 
         for pergunta in perguntas_selecionadas:
             op = mostrar_pergunta(pergunta)
             validacao = verifica_resposta(pergunta, op)
             if validacao:
-                print(":O VOCÊ É UMA MAQUINAA!")
+                print("-- :O VOCÊ É UMA MAQUINAA! --")
+                if pergunta["Dificuldade"] == "facil":
+                    pontos = pontos + 1
+                    p_perguntas = p_perguntas + 1
+                elif pergunta["Dificuldade"] == "medio":
+                    pontos = pontos + 2
+                    p_perguntas = p_perguntas + 1
+                elif pergunta["Dificuldade"] == "dificil":
+                    pontos = pontos + 3
+                    p_perguntas = p_perguntas + 1
+                print(f"-- Vc tem {pontos} pontos --")
             else:
-                print(":( Errouuuu")
+                print("-- :( Errouuuu --")
+                print(f"-- Vc tem {pontos} pontos --")
+                r_perguntas = r_perguntas + 1
+
+        menu_final(pontos, p_perguntas, r_perguntas)
 
 main()
 
