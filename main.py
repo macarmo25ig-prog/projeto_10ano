@@ -4,7 +4,7 @@ import random
 
 # Objetivo: Carregar jogadores do ficheiro de jogadores
 # Entra: 
-# - ficheiro: Nome do ficheiro onde estão os jogadores
+# - ficheiro: Nomes
 # Devolve:
 # - jogadores: Lista com os jogadores
 def carregar_nomes(ficheiro):
@@ -15,18 +15,27 @@ def carregar_nomes(ficheiro):
 
 # Objetivo: Guardar os nomes dos jogadores no ficheiro de jogadores
 # Entra: 
-# - ficheiro: Nome do ficheiro onde estão os jogadores
+# - ficheiro: Nomes
 # Devolve:
-# - jogadores: Lista com os jogadores
+# - lista: Ele devolve uma lista com os nomes guardados
 def guarda_nomes(lista, ficheiro):
     with open(ficheiro, "w", encoding="utf-8") as f:
         json.dump(lista, f, ensure_ascii=False, indent=4)
 
-
+# Objetivo: Pedir os nomes dos jogadores
+# Entra: 
+# - ficheiro: Nomes
+# Devolve:
+# - op: A introdução de um nome
 def pedir_nome():
     op = input("Por favor introduza o seu nickname: ")
     return op
 
+# Objetivo: Mostrar as classificações dos jogadores
+# Entra: 
+# - ficheiro: Nomes
+# Devolve:
+# - jogadores: Devolve o nome e os pontos do jogadores em um menu
 def classificacao(jogadores):
     print("\n----------* Classificações *----------\n")
     for jogador in jogadores:
@@ -37,6 +46,11 @@ def classificacao(jogadores):
             i = i + 1
         print("\n----------* *----------\n")
 
+# Objetivo: Mostrar o menu do jogo para os jogadores
+# Entra: 
+# - ficheiro: Main
+# Devolve:
+# - jogadores: Devolve ao jogadores o menu de inicil do jogo e a opção do jogador
 def mostrar_menu(jogadores):
     while True:
         print("----------* Um quizz mesmo lindo! Como o professor!111! *----------")
@@ -62,7 +76,11 @@ def mostrar_menu(jogadores):
         else:
             return op
 
-        
+# Objetivo: Carrgar as perguntas do outro ficheiro
+# Entra: 
+# - ficheiro: Perguntas.json
+# Devolve:
+# - jogadores: Um dicionario com listas com os nomes dos jogadores        
 def carregar_perguntas():
     perguntas = []
 
@@ -71,6 +89,11 @@ def carregar_perguntas():
 
     return perguntas
 
+# Objetivo: Mostrar as perguntas guardadas no outro ficheiro de perguntas e deixar mais bonito as perguntas
+# Entra: 
+# - ficheiro: Perguntas
+# Devolve:
+# - jogadores: A opção do jogador por der escolher e tambem mostrando a pergunta ao jogador
 def mostrar_pergunta(pergunta):
     i = 0
     print("\n----------* Pergunta *----------\n")
@@ -82,13 +105,22 @@ def mostrar_pergunta(pergunta):
     op = int(input("Qual a resposta correta? ")) 
     return op
 
-
+# Objetivo: Verifica se as respostas estão corretas com base nas informação do ficheiro de perguntas
+# Entra: 
+# - ficheiro: Perguntas
+# Devolve:
+# - jogadores: Se a resposta do jogador foi correta ou errada
 def verifica_resposta(pergunta, resposta):
     if resposta == pergunta["Certa"]:
         return True
     else:
         return False
-    
+
+# Objetivo: Mostrar as regras do jogo ao jogador
+# Entra: 
+# - ficheiro: Main
+# Devolve:
+# - jogadores: Mostra as regras que ele tem que seguir pra jogar
 def regras():
     print("------------------------------------*   Regras   *-----------------------------------------")
     print("\n1. Não pode selecionar algo fora das opções que tem de respota na hora que estiver jogando\n"   )
@@ -97,6 +129,11 @@ def regras():
     print("\n3. toda vez que iniciar sua pontuação vai ser salva para vc poder ver dps no menu de classificação\n")
     input("Para sair aperte ENTER...")
 
+# Objetivo: Mostrar um menu no fim do jogo ao jogador
+# Entra: 
+# - ficheiro: main
+# Devolve:
+# - jogadores: Um menu com as opções que ele pode escolher e informações da partida do jogador como: acertos de perguntas, erros e o total de pontos ganhos
 def menu_final(pontos, p_perguntas, r_perguntas):
 
     print("---------------*  Fim de Jogo  *-----------------")
@@ -111,6 +148,11 @@ def menu_final(pontos, p_perguntas, r_perguntas):
     elif respota == 1:
         main()
 
+# Objetivo: Verifica se já existe um jogador no ficheiro de informações do jogadores
+# Entra: 
+# - ficheiro: nomes
+# Devolve:
+# - jogadores: Ele vai fazer um teste que se o jogador já existir o nome dele no ficheiro
 def verifica_jogador(jogadores, nome):
     for jogador in jogadores:
         if jogador["Nome"] == nome:
@@ -124,6 +166,11 @@ def verifica_jogador(jogadores, nome):
     jogadores.append(jogador_atual)
     return jogador_atual
 
+# Objetivo: Atualizar o ficheiro do jogadores, como seus pontos e seu nome para fazer a classificação
+# Entra: 
+# - ficheiro: Nomes
+# Devolve:
+# - jogadores: Atualiza as infomações dos jogadores já existentes
 def atualiza_jogador(jogadores, jogador_atual):
     for jogador in jogadores:
         if jogador["Nome"] == jogador_atual["Nome"]:
@@ -132,8 +179,11 @@ def atualiza_jogador(jogadores, jogador_atual):
     print("Deu cocó!")
     return 0
 
-    
-
+# Objetivo: A base principal do jogo que é aonde tem o numero de ponto, acertos e erros, as dificuldades, onde tem a chamada das funções já listadas e tambem o codigo principal para o jogo funcionar
+# Entra: 
+# - ficheiro: Main
+# Devolve:
+# - jogadores: É a onde o jogadores vão receber seus pontos de acordo com a dificuldade, suas respostas serão verificadas, onde as funções já vistas antes vão ficar, as informações e o nome dos jogadores serão mandadas pelas outra funções ao ficheiro de nomes
 def main():
     jogadores = carregar_nomes("nomes.json")
     pontos = 0
