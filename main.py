@@ -1,6 +1,37 @@
 import json
 import random
 
+def carregar_nomes(ficheiro):
+    jogadores = []
+    with open(ficheiro, "r") as f:
+        jogadores = json.load(f)
+    return jogadores
+
+def guarda_nomes(lista, ficheiro):
+    with open(ficheiro, "w", encoding="utf-8") as f:
+        json.dump(lista, f, ensure_ascii=False, indent=4)
+
+def pedir_nome():
+    lista = []
+    lista = carregar_nomes("nomes.json")
+    op = input("Por favor introduza o seu nickname: ")
+    novo_jogador = {}
+    encontrei = False
+    for jogador in lista:
+        if jogador["Nome"] == op:
+            novo_jogador = jogador
+            encontrei = True
+
+    if encontrei == False:
+        novo_jogador = {
+            "Nome" : op,
+            "Pontos" : []
+        }
+        lista.append(novo_jogador)
+
+    guarda_nomes(lista, "nomes.json")
+    return novo_jogador
+
 def mostrar_menu():
     while True:
         print("----------* Pior quiz já feito *----------")
@@ -81,6 +112,8 @@ def main():
     r_perguntas = 0
     op = mostrar_menu()
     if op == 1:
+        jogador = pedir_nome()
+        print(jogador)
         p = carregar_perguntas()
 
         perguntas_selecionadas = random.sample(p, 10)
