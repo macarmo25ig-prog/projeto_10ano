@@ -11,28 +11,12 @@ def guarda_nomes(lista, ficheiro):
     with open(ficheiro, "w", encoding="utf-8") as f:
         json.dump(lista, f, ensure_ascii=False, indent=4)
 
+
 def pedir_nome():
-    lista = []
-    lista = carregar_nomes("nomes.json")
     op = input("Por favor introduza o seu nickname: ")
-    novo_jogador = {}
-    encontrei = False
-    for jogador in lista:
-        if jogador["Nome"] == op:
-            novo_jogador = jogador
-            encontrei = True
+    return op
 
-    if encontrei == False:
-        novo_jogador = {
-            "Nome" : op,
-            "Pontos" : []
-        }
-        lista.append(novo_jogador)
-
-    guarda_nomes(lista, "nomes.json")
-    return novo_jogador
-
-def mostrar_menu():
+def mostrar_menu(jogadores):
     while True:
         print("----------* Pior quiz já feito *----------")
         print("1 - Jogar")
@@ -42,6 +26,7 @@ def mostrar_menu():
         op = int(input("Introduz a tua opção: "))
 
         if op == 0:
+            guarda_nomes(jogadores, "nomes.json")
             break  
         elif op == 2:
             regras()
@@ -104,16 +89,30 @@ def menu_final(pontos, p_perguntas, r_perguntas):
         main()
     elif respota == 1:
         main()
+
+def verifica_jogador(jogadores, nome):
+    for jogador in jogadores:
+        if jogador["Nome"] == nome:
+            jogador_atual = jogador
+            return jogador_atual
+    
+    jogador_atual = {
+        "Nome" : nome,
+        "Pontos" : []
+    }
+    return jogador_atual
+
     
 
 def main():
+    jogadores = carregar_nomes("nomes.json")
     pontos = 0
     p_perguntas = 0
     r_perguntas = 0
-    op = mostrar_menu()
+    op = mostrar_menu(jogadores)
     if op == 1:
-        jogador = pedir_nome()
-        print(jogador)
+        nome = pedir_nome()
+        jogador_atual = verifica_jogador(jogadores, nome)
         p = carregar_perguntas()
 
         perguntas_selecionadas = random.sample(p, 10)
@@ -137,8 +136,11 @@ def main():
                 print("-- :( Errouuuu --")
                 print(f"-- Vc tem {pontos} pontos --")
                 r_perguntas = r_perguntas + 1
+        jogador_atual["Pontos"].append(pontos)
 
+        # Falta atualizar a lista de jogadores e salvar
         menu_final(pontos, p_perguntas, r_perguntas)
+
 
 main()
 
