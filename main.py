@@ -102,6 +102,14 @@ def verifica_jogador(jogadores, nome):
     }
     return jogador_atual
 
+def atualiza_jogador(jogadores, jogador_atual):
+    for jogador in jogadores:
+        if jogador["Nome"] == jogador_atual["Nome"]:
+            jogador["Pontos"] = jogador_atual["Pontos"]
+            return jogadores
+    print("Deu cocó!")
+    return 0
+
     
 
 def main():
@@ -137,8 +145,10 @@ def main():
                 print(f"-- Vc tem {pontos} pontos --")
                 r_perguntas = r_perguntas + 1
         jogador_atual["Pontos"].append(pontos)
+        print(f"Jogador Atual: {jogador_atual}")
+        jogadores = atualiza_jogador(jogadores, jogador_atual)
+        guarda_nomes(jogadores, "nomes.json")
 
-        # Falta atualizar a lista de jogadores e salvar
         menu_final(pontos, p_perguntas, r_perguntas)
 
 
