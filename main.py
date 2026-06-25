@@ -16,8 +16,15 @@ def mostrar_menu():
             regras()
         elif op == 3:
             print("Aqui vai ficar a classificação")
+        elif op > 3:
+            print("Você introduziu o numero errado, por favor escolha o numero correto :)")
+            return mostrar_menu()
+        elif op < 0:
+            print("Você introduziu o numero errado, por favor escolha o numero correto :)")
+            return mostrar_menu()
         else:
             return op
+
         
 def carregar_perguntas():
     perguntas = []
@@ -63,9 +70,10 @@ def menu_final(pontos, p_perguntas, r_perguntas):
     print(f"1 - Jogar Novamente")
     respota = int(input("Introduza a sua escolha: "))
     if respota == 0:
-        mostrar_menu()
+        main()
     elif respota == 1:
         main()
+    
 
 def main():
     pontos = 0
