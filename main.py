@@ -1,12 +1,23 @@
 import json
 import random
 
+
+# Objetivo: Carregar jogadores do ficheiro de jogadores
+# Entra: 
+# - ficheiro: Nome do ficheiro onde estão os jogadores
+# Devolve:
+# - jogadores: Lista com os jogadores
 def carregar_nomes(ficheiro):
     jogadores = []
     with open(ficheiro, "r") as f:
         jogadores = json.load(f)
     return jogadores
 
+# Objetivo: Guardar os nomes dos jogadores no ficheiro de jogadores
+# Entra: 
+# - ficheiro: Nome do ficheiro onde estão os jogadores
+# Devolve:
+# - jogadores: Lista com os jogadores
 def guarda_nomes(lista, ficheiro):
     with open(ficheiro, "w", encoding="utf-8") as f:
         json.dump(lista, f, ensure_ascii=False, indent=4)
@@ -16,9 +27,19 @@ def pedir_nome():
     op = input("Por favor introduza o seu nickname: ")
     return op
 
+def classificacao(jogadores):
+    print("\n----------* Classificações *----------\n")
+    for jogador in jogadores:
+        print(f"Jogador: {jogador["Nome"]}\n")
+        i = 1
+        for pontuacao in jogador["Pontos"]:
+            print(f"{i}ª Tentativa: {pontuacao}")
+            i = i + 1
+        print("\n----------* *----------\n")
+
 def mostrar_menu(jogadores):
     while True:
-        print("----------* Pior quiz já feito *----------")
+        print("----------* Um quizz mesmo lindo! Como o professor!111! *----------")
         print("1 - Jogar")
         print("2 - Regras")
         print("3 - Classificações")
@@ -26,12 +47,12 @@ def mostrar_menu(jogadores):
         op = int(input("Introduz a tua opção: "))
 
         if op == 0:
-            guarda_nomes(jogadores, "nomes.json")
+            print("Adeus... Foi bom... Gostei muito! Adeus... Fico triste... Mas pronto... Eu fico aqui, sozinho... Xau... :(")
             break  
         elif op == 2:
             regras()
         elif op == 3:
-            print("Aqui vai ficar a classificação")
+            classificacao(jogadores)
         elif op > 3:
             print("Você introduziu o numero errado, por favor escolha o numero correto :)")
             return mostrar_menu()
@@ -100,6 +121,7 @@ def verifica_jogador(jogadores, nome):
         "Nome" : nome,
         "Pontos" : []
     }
+    jogadores.append(jogador_atual)
     return jogador_atual
 
 def atualiza_jogador(jogadores, jogador_atual):
@@ -145,7 +167,6 @@ def main():
                 print(f"-- Vc tem {pontos} pontos --")
                 r_perguntas = r_perguntas + 1
         jogador_atual["Pontos"].append(pontos)
-        print(f"Jogador Atual: {jogador_atual}")
         jogadores = atualiza_jogador(jogadores, jogador_atual)
         guarda_nomes(jogadores, "nomes.json")
 
